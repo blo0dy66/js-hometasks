@@ -19,7 +19,7 @@ if (nowHour >= 23) {
 }
 
 
-// 2nd 
+// 2nd
 
 // switch (true) {
 //     case (nowHour >= 23):

@@ -6,7 +6,7 @@ let a = 1;
 let b = 3
 let c = 4;
 
-let result = (a < b && b < c ) ? "It`s true" : "It`s false";
+let result = (a < b && b < c) ? "It`s true" : "It`s false";
 console.log(result)
 
 
