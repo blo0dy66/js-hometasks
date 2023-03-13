@@ -16,6 +16,6 @@ let res3 = x < y // Допишіть код, необхідно використ
 console.log(res3); // true
 console.log(typeof res3); // ""boolean""
 
-let res4 = x + y / "WHAT?" // Допишіть код, необхідно використовувати змінні x і y
+let res4 = x + y / NaN  // Допишіть код, необхідно використовувати змінні x і y
 console.log(res4); // NaN
 console.log(typeof res4); // ""number""
