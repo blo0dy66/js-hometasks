@@ -51,9 +51,6 @@ function updatePriceQuant() {
     } else {
         priceOutput.textContent = '$' + totalPrice;
     }
-    if (quantityInput.value > 30) {
-        quantityInput.value = 30;
-    }
 }
 
 quantityInput.addEventListener('input', () => {
