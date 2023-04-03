@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            align-items: center;
+        }
+
+        .form-group {
+            margin: 0;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-select {
+            width: 100%;
+        }
+
+        #selection {
+            margin: 0;
+        }
+    </style>
+    <div class="container mt-5">
+        <div class="form-group">
+            <label for="country" class="form-label">Country:</label>
+            <select name="country" id="country" class="form-control">
+                <option value="ger">Germany</option>
+                <option value="usa">USA</option>
+                <option value="ukr">Ukraine</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cities" class="form-label">City:</label>
+            <select name="cities" id="cities" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <p id="selection" class="lead"></p>
+        </div>
+    </div>
+
+    <script src="js/task7.js"></script>
+</body>
+
+</html>

@@ -28,13 +28,15 @@ for (let i = 0; i < colors.length; i++) {
     });
 }
 
-sizes.forEach((size) => {
-    size.addEventListener("click", () => {
-        sizes.forEach((s) => s.classList.remove("active"));
-        size.classList.add("active");
+for (let i = 0; i < sizes.length; i++) {
+    sizes[i].addEventListener("click", () => {
+        for (let j = 0; j < sizes.length; j++) {
+            sizes[j].classList.remove("active");
+        }
+        sizes[i].classList.add("active");
         updatePrice();
     });
-});
+}
 
 const quantityInput = document.querySelector('#quantity-input');
 
