@@ -6,15 +6,12 @@
 //         Приклад – курсор наведений на лінку.
 
 
-const div = document.querySelector('.main')
-const firstButton = document.querySelector('.makeblue')
-const secondButton = document.querySelector('.makepink')
-const thirdButton = document.querySelector('.makebrown')
+const div = document.querySelector('.main');
+const firstButton = document.querySelector('.makeblue');
+const secondButton = document.querySelector('.makepink');
+const thirdButton = document.querySelector('.makebrown');
 const link = document.querySelector("a");
 
-
-
-firstButton.addEventListener("click", makeBlue)
 firstButton.addEventListener("click", makeBlue);
 secondButton.addEventListener("dblclick", makePink);
 thirdButton.addEventListener("mousedown", makeBrown);
@@ -23,19 +20,23 @@ link.addEventListener("mouseover", makeYellow);
 link.addEventListener("mouseout", makeWhite);
 
 function makeBlue() {
-    div.style.backgroundColor = 'blue'
+    div.style.backgroundColor = '#0000FF';
 }
+
 function makePink() {
-    div.style.backgroundColor = "pink";
+    div.style.backgroundColor = "#FFC0CB";
 }
+
 function makeBrown() {
-    div.style.backgroundColor = "brown";
-    div.style.color = "white";
+    div.style.backgroundColor = "#A52A2A";
+    div.style.color = "#FFFFFF";
 }
+
 function makeWhite() {
-    div.style.backgroundColor = "white";
-    div.style.color = "black";
+    div.style.backgroundColor = "#FFFFFF";
+    div.style.color = "#000000";
 }
+
 function makeYellow() {
-    div.style.backgroundColor = "yellow";
+    div.style.backgroundColor = "#FFFF00";
 }
