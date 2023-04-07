@@ -31,6 +31,4 @@ citiesSelect.addEventListener("change", function () {
 
 
 countrySelect.addEventListener("change", updateCities);
-
-
 updateCities();

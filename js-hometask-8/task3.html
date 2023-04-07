@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial;
+            font-size: 24px;
+            text-align: center;
+            background-color: white;
+
+        }
+
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .makeblue {
+            background-color: blue;
+            color: white;
+        }
+
+        .makepink {
+            background-color: pink;
+        }
+
+        .makebrown {
+            background-color: brown;
+            color: white;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+    <div class="main ">
+        <button class="makeblue">Click to make the page blue</button>
+        <button class="makepink">Double-click to make the page pink</button>
+        <button class="makebrown">Click and hold to make the page brown</button>
+        <a class="hovermakeyellow" href="#">Hover over to make page yellow</a>
+
+    </div>
+    <script src="js/task3.js"></script>
+</body>
+
+</html>
