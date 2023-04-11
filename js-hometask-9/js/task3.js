@@ -5,8 +5,13 @@
 //    <div>text2</div>
 
 
-$(document).ready(function () {
+$(function () {
     $('h3').each(function () {
-        $(this).prev('div').insertBefore($(this));
+        let $this = $(this);
+        let $next = $this.next();
+        while ($next.is('div')) {
+            $next.insertBefore($this);
+            $next = $this.next();
+        }
     });
 });
