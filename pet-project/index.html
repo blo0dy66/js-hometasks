@@ -4,152 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickerz</title>
-    <link rel="stylesheet" href="css/alert.css">
-    <link rel="shortcut icon" href="img/baby-yoda.svg" type="image/x-icon">
+    <title>Cups</title>
+    <link rel="stylesheet" href="pet-project/css/main.css">
+
 </head>
 
 <body>
-    <style>
-        /* Set body font and background color */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
+    <header class="header">
+        <div class="header__container">
+            <a href="" class="header__items-page">My Cups</a>
+            <a href="" class="header__create-page-modal">Create New</a>
+            <div class="header__search">
+                <input type="text" class="header__search-input" placeholder="Search something..">
+                <button type="submit" class="header__search-btn">Search</button>
+                <button type="submit" class="header__search-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </header>
 
-        /* Style container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #ccc;
-        }
+    <main class="main">
+        <div class="main__container">
+            <div class="manage-items">
+                <p class="manage-items__text">Manage cups</p>
+                <p class="manage-sort-by-volume-text">Sort by volume</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="manage-items-text">Count total volume:</p>
+                <button type="submit" class="manage-count-btn">Count</button>
+                <p class="manage-items__total-volume">Total volume:<span class="manage__volume"></span></p>
+            </div>
+            <div class="item-list"></div>
+        </div>
+    </main>
+    <footer class="footer">
 
-        /* Style form */
-        .form {
-            margin-bottom: 20px;
-        }
 
-        .form h2 {
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
+    </footer>
 
-        .form label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    <div class="modal" id="create-modal">
+        <div class="modal__content">
+            <h2 class="modal__title">Create</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name-input">Item name</label>
+                    <input type="text" id="name-input" name="name-input">
+                </div>
+                <div class="form-group">
+                    <label for="volume-input">Item volume</label>
+                    <input type="text" id="volume-input" name="volume-input">
+                </div>
+                <div class="form-group">
+                    <label for="material-input">Item material</label>
+                    <input type="text" id="material-input" name="material-input">
+                </div>
+                <div class="form-group">
+                    <label for="color-input">Item color</label>
+                    <select id="color-input" name="color-input">
+                        <option value="red">🔴Red</option>
+                        <option value="blue">🔵Blue</option>
+                        <option value="green">🟢Green</option>
+                        <option value="yellow">🟡Yellow</option>
+                        <option value="orange">🟠Orange</option>
+                        <option value="purple">🟣Purple</option>
+                    </select>
+                </div>
+                <button class="modal__btn-create" type="submit">Create</button>
+            </form>
+            <button class="modal__close-btn" data-action="close"><span class="modal__close-icon">&times;</span></button>
+        </div>
+    </div>
 
-        .form input[type="text"],
-        .form input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    <div class="modal" id="edit-modal">
+        <div class="modal__content">
+            <h2 class="modal__title">Edit</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name-input">Item name</label>
+                    <input type="text" id="name-input" name="name-input">
+                </div>
+                <div class="form-group">
+                    <label for="volume-input">Item volume</label>
+                    <input type="text" id="volume-input" name="volume-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="material-input">Item material</label>
+                    <input type="text" id="volume-input" name="volume-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="color-input">Item color</label>
+                    <select id="color-input" name="color-input">
+                        <option value="red">🔴Red</option>
+                        <option value="blue">🔵Blue</option>
+                        <option value="green">🟢Green</option>
+                        <option value="yellow">🟡Yellow</option>
+                        <option value="orange">🟠Orange</option>
+                        <option value="purple">🟣Purple</option>
+                    </select>
+                </div>
+                <button class="modal__btn-edit" type="submit">Edit</button>
+            </form>
+            <button class="modal__close-btn" data-action="close">span class="modal__close-icon">&times;</span></button>
+        </div>
+    </div>
 
-        .form button[type="submit"] {
-            display: block;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background-color: #008cba;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
 
-        /* Style table */
-        .table h2 {
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-
-        .search-sort {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .search-group,
-        .sort-group {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-group label,
-        .sort-group label {
-            margin-right: 10px;
-        }
-
-        .search-group input[type="text"] {
-            width: 200px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .sort-group select {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-
-        .card {
-            margin-bottom: 10px;
-            padding: 20px;
-            background-color: #f2f2f2;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px #ccc;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .card p {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .card button {
-            padding: 5px 10px;
-            background-color: #f44336;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        #item-image-input {
-            display: none;
-        }
-
-        #item-image-label {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 12px 24px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        #item-image-label:hover {
-            background-color: #3e8e41;
-        }
-    </style>
-    <h1>Online-shop</h1>
+    <!-- <h1>Online-shop</h1>
     <div class="container">
         <div class="form">
             <h2>Добавить новый товар</h2>
@@ -166,7 +127,7 @@
                     <label id="item-image-label" for="item-image-input">Upload Image</label>
                     <input type="file" id="item-image-input" name="item-image-input">
                 </div>
-                <button type="submit">Создать</button>
+                <button type="submit"></button>
             </form>
         </div>
     </div>
@@ -187,12 +148,12 @@
         </div>
         <div id="item-list">
             <!-- Populate with elements from localStorage -->
-        </div>
+    <!-- </div>
     </div>
-    </div>
+    </div> -->
 
 
-    <script src="js/order.js"></script>
+    <script src="pet-project/js/order.js"></script>
 
 </body>
 
