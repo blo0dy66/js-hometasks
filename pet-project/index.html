@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <div class="header__container">
-            <a href="" class="header__items-page">My Cups</a>
+            <a href="" class="header__items-page">My item</a>
             <a href="" class="header__create-page-modal">Create New</a>
             <div class="header__search">
                 <input type="text" class="header__search-input" placeholder="Search something..">
@@ -25,7 +25,7 @@
     <main class="main">
         <div class="main__container">
             <div class="manage-items">
-                <p class="manage-items__text">Manage cups</p>
+                <p class="manage-items__text">Manage item</p>
                 <p class="manage-sort-by-volume-text">Sort by volume</p>
                 <label class="switch">
                     <input type="checkbox">
@@ -46,10 +46,14 @@
     <div class="modal" id="create-modal">
         <div class="modal__content">
             <h2 class="modal__title">Create</h2>
-            <form>
+            <form id="create-item">
                 <div class="form-group">
                     <label for="name-input">Item name</label>
                     <input type="text" id="name-input" name="name-input">
+                </div>
+                <div class="form-group">
+                    <label for="image-input">Image input</label>
+                    <input type="file" id="image-input" name="image-input">
                 </div>
                 <div class="form-group">
                     <label for="volume-input">Item volume</label>
@@ -60,14 +64,18 @@
                     <input type="text" id="material-input" name="material-input">
                 </div>
                 <div class="form-group">
+                    <label for="price-input">Item price</label>
+                    <input type="text" id="price-input" name="price-input"></textarea>
+                </div>
+                <div class="form-group">
                     <label for="color-input">Item color</label>
                     <select id="color-input" name="color-input">
-                        <option value="red">🔴Red</option>
-                        <option value="blue">🔵Blue</option>
-                        <option value="green">🟢Green</option>
-                        <option value="yellow">🟡Yellow</option>
-                        <option value="orange">🟠Orange</option>
-                        <option value="purple">🟣Purple</option>
+                        <option value="🔴red">🔴Red</option>
+                        <option value="🔵blue">🔵Blue</option>
+                        <option value="🟢green">🟢Green</option>
+                        <option value="🟡yellow">🟡Yellow</option>
+                        <option value="🟠orange">🟠Orange</option>
+                        <option value="🟣purple">🟣Purple</option>
                     </select>
                 </div>
                 <button class="modal__btn-create" type="submit">Create</button>
@@ -103,9 +111,13 @@
                         <option value="purple">🟣Purple</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="price-input">Item price</label>
+                    <input type="text" id="price-input" name="price-input"></textarea>
+                </div>
                 <button class="modal__btn-edit" type="submit">Edit</button>
             </form>
-            <button class="modal__close-btn" data-action="close">span class="modal__close-icon">&times;</span></button>
+            <button class="modal__close-btn" data-action="close"><span class="modal__close-icon">&times;</span></button>
         </div>
     </div>
 
