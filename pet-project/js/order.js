@@ -146,6 +146,7 @@ function renderItems(filteredItems = items) {
     cardElement.appendChild(deleteButton);
 
     const editButton = document.createElement("button");
+    editButton.setAttribute('id', 'edit-button')
     editButton.innerText = "Edit"
     editButton.addEventListener('click', () => editItem(item))
     cardElement.appendChild(editButton)
