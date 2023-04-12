@@ -23,7 +23,7 @@ const searchButton = document.querySelector('.header__search-btn')
 const cancelButton = document.querySelector('.header__search-cancel-btn')
 const countVolumeButton = document.querySelector('.manage-count-btn')
 const createItem = document.getElementById('create-modal');
-const editItem = document.getElementById('edit-modal');
+
 const createItemForm = document.getElementById('create-modal');
 
 
@@ -146,25 +146,17 @@ function renderItems(filteredItems = items) {
     cardElement.appendChild(deleteButton);
 
     const editButton = document.createElement("button");
-    editButton.setAttribute('id', 'edit-item-button');
     editButton.innerText = "Edit"
-    editButton.addEventListener('click', () => editItemFunc(item))
+    editButton.addEventListener('click', () => editItem(item))
     cardElement.appendChild(editButton)
-
-    const editButtonItem = document.getElementById('edit-item-button')
-
-    editButtonItem.addEventListener('click', (event) => {
-      event.preventDefault();
-      editItem.style.display = 'block';
-    });
-
-    closeModalButton.addEventListener('click', () => {
-      editItem.style.display = 'none';
-    });
 
     itemList.appendChild(cardElement);
   });
 
+  editButton.addEventListener('click', () => {
+    const editModal = document.getElementById('edit-modal');
+    editModal.style.display = 'block';
+  });
 
 }
 
@@ -193,7 +185,7 @@ function deleteItem(item) {
   }
 }
 
-function editItemFunc(item) {
+function editItem(item) {
   // Here you can add the code to display a form to edit the item's properties
   // Once the user submits the form, you can update the item object and save it using saveItems() function
   // After that, call the renderItems() function to update the view
