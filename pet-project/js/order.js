@@ -123,9 +123,6 @@ function renderItems(filteredItems = items) {
     nameElement.innerText = item.name;
     cardElement.appendChild(nameElement);
 
-    const priceElement = document.createElement("p");
-    priceElement.innerText = `Price: $${item.price}`;
-    cardElement.appendChild(priceElement);
 
     const materialElement = document.createElement('p')
     materialElement.innerText = `Material: ${item.material}`
@@ -135,6 +132,13 @@ function renderItems(filteredItems = items) {
     colorElement.innerText = `Color: ${item.color}`
     cardElement.appendChild(colorElement)
 
+    const volumeElement =  document.createElement('p')
+    volumeElement.innerText = `Volume: ${item.volume}ml`
+    cardElement.appendChild(volumeElement)
+
+    const priceElement = document.createElement("p");
+    priceElement.innerText = `Price: $${item.price}`;
+    cardElement.appendChild(priceElement);
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
