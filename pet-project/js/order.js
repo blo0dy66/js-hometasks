@@ -151,13 +151,15 @@ function renderItems(filteredItems = items) {
     editButton.addEventListener('click', () => editItem(item))
     cardElement.appendChild(editButton)
 
+    editButton.addEventListener('click', () => {
+      const editModal = document.getElementById('edit-modal');
+      editModal.style.display = 'block';
+    });
+
     itemList.appendChild(cardElement);
   });
 
-  editButton.addEventListener('click', () => {
-    const editModal = document.getElementById('edit-modal');
-    editModal.style.display = 'block';
-  });
+
 
 }
 
