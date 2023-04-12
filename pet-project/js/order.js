@@ -148,7 +148,7 @@ function renderItems(filteredItems = items) {
     const editButton = document.createElement("button");
     editButton.innerText = "Edit"
     editButton.addEventListener('click', () => editItem(item))
-
+    cardElement.appendChild(editButton)
 
     itemList.appendChild(cardElement);
   });
