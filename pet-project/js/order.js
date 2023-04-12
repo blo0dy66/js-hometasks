@@ -151,7 +151,7 @@ function renderItems(filteredItems = items) {
     editButton.addEventListener('click', () => editItemFunc(item))
     cardElement.appendChild(editButton)
 
-    const editButtonItem = document.getElementById(edit-item-button)
+    const editButtonItem = document.getElementById('edit-item-button')
 
     editButtonItem.addEventListener('click', (event) => {
       event.preventDefault();
