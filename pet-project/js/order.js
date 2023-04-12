@@ -132,7 +132,7 @@ function renderItems(filteredItems = items) {
     colorElement.innerText = `Color: ${item.color}`
     cardElement.appendChild(colorElement)
 
-    const volumeElement =  document.createElement('p')
+    const volumeElement = document.createElement('p')
     volumeElement.innerText = `Volume: ${item.volume}ml`
     cardElement.appendChild(volumeElement)
 
@@ -157,11 +157,10 @@ function renderItems(filteredItems = items) {
       event.preventDefault();
       editItem.style.display = 'block';
     });
-    
+
     closeModalButton.addEventListener('click', () => {
       editItem.style.display = 'none';
     });
-
 
     itemList.appendChild(cardElement);
   });
