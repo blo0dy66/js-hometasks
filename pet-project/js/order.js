@@ -99,7 +99,7 @@ async function addItem(event) {
   itemVolumeInput.value = ""
   itemMaterialInput.value = ""
   itemColorInput.value = ""
-
+  imageInput.value = "";
 
   // Render updated items list
   renderItems();
