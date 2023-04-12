@@ -100,6 +100,7 @@ async function addItem(event) {
   itemMaterialInput.value = ""
   itemColorInput.value = ""
 
+
   // Render updated items list
   renderItems();
 
@@ -113,6 +114,10 @@ function renderItems(filteredItems = items) {
   filteredItems.forEach(item => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
+
+    const imageElement = document.createElement("img");
+    imageElement.src = item.imageUrl;
+    cardElement.appendChild(imageElement);
 
     const nameElement = document.createElement("h3");
     nameElement.innerText = item.name;
