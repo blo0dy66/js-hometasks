@@ -148,7 +148,7 @@ function renderItems(filteredItems = items) {
     const editButton = document.createElement("button");
     editButton.setAttribute('id', 'edit-item-button');
     editButton.innerText = "Edit"
-    editButton.addEventListener('click', () => editItem(item))
+    editButton.addEventListener('click', () => editItemFunc(item))
     cardElement.appendChild(editButton)
 
     const editButtonItem = document.getElementById(edit-item-button)
@@ -194,7 +194,7 @@ function deleteItem(item) {
   }
 }
 
-function editItem(item) {
+function editItemFunc(item) {
   // Here you can add the code to display a form to edit the item's properties
   // Once the user submits the form, you can update the item object and save it using saveItems() function
   // After that, call the renderItems() function to update the view
