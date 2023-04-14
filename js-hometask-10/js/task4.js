@@ -1,11 +1,28 @@
-// На HTML-сторінці є 6 чекбоксів. Напишіть скріпт, який після того, як користувач позначив будь-які 3 чекбокси, 
-// всі чекбокси робить неактивними.
+// Змініть код використовуючи стрілкові функції, щоб в коді не використовувалися методи 
 
-$(document).ready(function () {
-    let checkboxes = $('input[type="checkbox"]');
-    checkboxes.change(function () {
-        if (checkboxes.filter(':checked').length >= 3) {
-            checkboxes.prop('disabled', true);
-        }
-    });
-});
+let server = {
+    data: 0,
+    convertToString: function (callback) {
+        callback(() => {
+            return this.data + "";
+        });
+    }
+};
+
+let client = {
+    server: server,
+    result: "",
+    calc: function (data) {
+        this.server.data = data;
+        this.server.convertToString(this.notification());
+    },
+    notification: function () {
+        return (callback) => {
+            this.result = callback();
+        };
+    }
+};
+
+client.calc(123);
+console.log(client.result); // "123"
+console.log(typeof client.result); // "string"

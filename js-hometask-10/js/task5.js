@@ -1,11 +1,10 @@
-// На HTML-сторінці є 6 чекбоксів. Напишіть скріпт, який після того, як користувач позначив будь-які 3 чекбокси, 
-// всі чекбокси робить неактивними.
+// Напишіть функцію mapBuilder (keysArray, valuesArrays), яка приймає два масиви однакової довжини. Використовуючи ці масиви, функція повинна створювати об'єкт типу Map, 
+// ключами якого є значення з першого масиву, а значеннями Map - значення з другого масиву. Після цього функція повертає даний об'єкт Map.
 
-$(document).ready(function () {
-    let checkboxes = $('input[type="checkbox"]');
-    checkboxes.change(function () {
-        if (checkboxes.filter(':checked').length >= 3) {
-            checkboxes.prop('disabled', true);
-        }
-    });
-});
+function mapBuilder(keysArray, valuesArray) {
+    const map = new Map();
+    for (let i = 0; i < keysArray.length; i++) {
+        map.set(keysArray[i], valuesArray[i]);
+    }
+    return map;
+}
