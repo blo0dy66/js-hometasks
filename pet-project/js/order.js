@@ -23,13 +23,10 @@ const searchButton = document.querySelector('.header__search-btn')
 const cancelButton = document.querySelector('.header__search-cancel-btn')
 const countVolumeButton = document.querySelector('.manage-count-btn')
 const createItem = document.getElementById('create-modal');
-
 const createItemForm = document.getElementById('create-modal');
 
 
 // DOM 
-
-
 const itemPriceInput = document.getElementById("price-input")
 const itemNameInput = document.getElementById("name-input")
 const itemVolumeInput = document.getElementById("volume-input")
